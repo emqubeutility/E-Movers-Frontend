@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="640" viewBox="0 0 1600 640">
+  <defs>
+    <linearGradient id="main" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6a994"/>
+      <stop offset="1" stop-color="#a65a4b"/>
+    </linearGradient>
+    <linearGradient id="soft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3cfc1"/>
+      <stop offset="1" stop-color="#c98370"/>
+    </linearGradient>
+    <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c47c69"/>
+      <stop offset="1" stop-color="#8a4436"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6d3c6"/>
+      <stop offset=".55" stop-color="#d0907c"/>
+      <stop offset="1" stop-color="#9a5446"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1c9a0"/>
+      <stop offset="1" stop-color="#c58a5c"/>
+    </linearGradient>
+    <pattern id="vrib" width="6" height="10" patternUnits="userSpaceOnUse">
+      <rect x="3" width="1.2" height="10" fill="#fff4ef" opacity=".4"/>
+    </pattern>
+    <pattern id="hrib" width="10" height="7" patternUnits="userSpaceOnUse">
+      <rect y="4" width="10" height="1.2" fill="#fff4ef" opacity=".45"/>
+    </pattern>
+    <pattern id="grid" width="8" height="9" patternUnits="userSpaceOnUse">
+      <rect x="2" y="2" width="4" height="5" fill="#fff4ef" opacity=".45"/>
+    </pattern>
+    <pattern id="frame" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0,6 L6,0 L12,6 L6,12 Z" fill="none" stroke="#fff4ef" stroke-width=".9" opacity=".55"/>
+    </pattern>
+    <pattern id="twist" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)">
+      <rect y="8" width="14" height="2" fill="#fff4ef" opacity=".5"/>
+    </pattern>
+    <clipPath id="mofBody">
+      <path clip-rule="evenodd" d="M538,474a70,52 -6 1,0 140,0a70,52 -6 1,0 -140,0Z M610,470a22,29 -12 1,0 44,0a22,29 -12 1,0 -44,0Z" transform="translate(0 0)"/>
+    </clipPath>
+    <linearGradient id="bkL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5d2c4"/>
+      <stop offset="1" stop-color="#d9957f"/>
+    </linearGradient>
+    <linearGradient id="bkC" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d48a74"/>
+      <stop offset="1" stop-color="#b06452"/>
+    </linearGradient>
+    <linearGradient id="bkR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9a5446"/>
+      <stop offset="1" stop-color="#6e2f26"/>
+    </linearGradient>
+    <linearGradient id="mof" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf7"/>
+      <stop offset=".6" stop-color="#f1dcd3"/>
+      <stop offset="1" stop-color="#d9b2a4"/>
+    </linearGradient>
+    <linearGradient id="mound" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3a993"/>
+      <stop offset="1" stop-color="#b06a58"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0 160)">
+
+  <!-- Soft towers far behind the icons -->
+  <g fill="#e9bfb0" opacity=".7">
+    <rect x="200" y="300" width="34" height="166"/>
+    <rect x="400" y="250" width="26" height="216"/>
+    <polygon points="640,466 640,280 652,250 664,280 664,466"/>
+    <rect x="860" y="320" width="30" height="146"/>
+    <rect x="1010" y="290" width="28" height="176"/>
+    <polygon points="1180,466 1180,270 1192,240 1204,270 1204,466"/>
+    <rect x="1400" y="300" width="36" height="166"/>
+    <rect x="1520" y="260" width="30" height="206"/>
+  </g>
+
+  <!-- Mosque (Jumeirah Mosque style): central dome, side domes, two minarets -->
+  <g>
+    <rect x="24" y="452" width="232" height="14" fill="#8a4436"/>
+    <rect x="60" y="382" width="160" height="70" fill="url(#soft)"/>
+    <rect x="60" y="378" width="160" height="5" fill="#a65a4b"/>
+    <path fill="#fdeee7" opacity=".9" d="M70,434V406.0Q70,400 75.0,397.5Q80,400 80,406.0V434Z"/>
+    <path fill="#fdeee7" opacity=".9" d="M88,434V406.0Q88,400 93.0,397.5Q98,400 98,406.0V434Z"/>
+    <path fill="#fdeee7" opacity=".9" d="M106,434V406.0Q106,400 111.0,397.5Q116,400 116,406.0V434Z"/>
+    <path fill="#fdeee7" opacity=".9" d="M164,434V406.0Q164,400 169.0,397.5Q174,400 174,406.0V434Z"/>
+    <path fill="#fdeee7" opacity=".9" d="M182,434V406.0Q182,400 187.0,397.5Q192,400 192,406.0V434Z"/>
+    <path fill="#fdeee7" opacity=".9" d="M200,434V406.0Q200,400 205.0,397.5Q210,400 210,406.0V434Z"/>
+    <rect x="122" y="392" width="36" height="60" fill="#c98370"/>
+    <path fill="#fdeee7" d="M128,452V418.4Q128,404 140.0,398.0Q152,404 152,418.4V452Z"/>
+    <rect x="108" y="350" width="64" height="30" fill="url(#soft)"/>
+    <path fill="#fdeee7" opacity=".85" d="M114,374V361.0Q114,358 116.5,356.75Q119,358 119,361.0V374Z"/>
+    <path fill="#fdeee7" opacity=".85" d="M126,374V361.0Q126,358 128.5,356.75Q131,358 131,361.0V374Z"/>
+    <path fill="#fdeee7" opacity=".85" d="M138,374V361.0Q138,358 140.5,356.75Q143,358 143,361.0V374Z"/>
+    <path fill="#fdeee7" opacity=".85" d="M150,374V361.0Q150,358 152.5,356.75Q155,358 155,361.0V374Z"/>
+    <path fill="#fdeee7" opacity=".85" d="M162,374V361.0Q162,358 164.5,356.75Q167,358 167,361.0V374Z"/>
+    <path fill="url(#main)" d="M102,352Q102,306 140.0,296Q178,306 178,352Z"/>
+    <path fill="#fff4ef" opacity=".35" d="M112,350Q114,314 136,302Q122,318 120,350Z"/>
+    <rect x="139.2" y="276" width="1.6" height="22" fill="#8a4436"/>
+    <path fill="url(#main)" d="M68,380Q68,366 84.0,356Q100,366 100,380Z"/>
+    <path fill="url(#main)" d="M180,380Q180,366 196.0,356Q212,366 212,380Z"/>
+    <rect x="83.3" y="346" width="1.4" height="11" fill="#8a4436"/>
+    <rect x="195.3" y="346" width="1.4" height="11" fill="#8a4436"/>
+    <rect x="34" y="236" width="14" height="216" fill="url(#soft)"/><rect x="43" y="236" width="5" height="216" fill="#a65a4b" opacity=".25"/><rect x="30" y="300" width="22" height="5" fill="#a65a4b"/><rect x="31" y="362" width="20" height="5" fill="#a65a4b"/><rect x="35" y="226" width="12" height="10" fill="url(#soft)"/><path fill="url(#main)" d="M34,228 Q34,210 41,200 Q48,210 48,228Z"/><rect x="40.2" y="186" width="1.6" height="15" fill="#8a4436"/><circle cx="41" cy="186" r="2.2" fill="#8a4436"/><path fill="#fdeee7" opacity=".8" d="M38,346V319.6Q38,316 41.0,314.5Q44,316 44,319.6V346Z"/><path fill="#fdeee7" opacity=".8" d="M38,410V383.6Q38,380 41.0,378.5Q44,380 44,383.6V410Z"/>
+    <rect x="232" y="236" width="14" height="216" fill="url(#soft)"/><rect x="241" y="236" width="5" height="216" fill="#a65a4b" opacity=".25"/><rect x="228" y="300" width="22" height="5" fill="#a65a4b"/><rect x="229" y="362" width="20" height="5" fill="#a65a4b"/><rect x="233" y="226" width="12" height="10" fill="url(#soft)"/><path fill="url(#main)" d="M232,228 Q232,210 239,200 Q246,210 246,228Z"/><rect x="238.2" y="186" width="1.6" height="15" fill="#8a4436"/><circle cx="239" cy="186" r="2.2" fill="#8a4436"/><path fill="#fdeee7" opacity=".8" d="M236,346V319.6Q236,316 239.0,314.5Q242,316 242,319.6V346Z"/><path fill="#fdeee7" opacity=".8" d="M236,410V383.6Q236,380 239.0,378.5Q242,380 242,383.6V410Z"/>
+  </g>
+
+  <!-- Burj Khalifa: central core, two wings stepping back in a spiral, long spire -->
+  <g transform="translate(0 -80) translate(330 546) scale(0.72 1.1465) translate(-330 -546)">
+    <path fill="url(#bkL)" d="M318,546H280V472H288V396H296V318H302V248H308V186H314V150H318Z"/>
+    <path fill="url(#bkR)" d="M342,546H380V432H372V354H364V276H358V212H352V166H346V146H342Z"/>
+    <path fill="url(#bkC)" d="M318,546V140H322V122H338V140H342V546Z"/>
+    <polygon fill="url(#bkC)" points="326,124 330,0 334,124"/>
+    <path fill="url(#hrib)" d="M280,546V472H288V396H296V318H302V248H308V186H314V150H318V140H322V122H338V140H342V146H346V166H352V212H358V276H364V354H372V432H380V546Z"/>
+    <rect x="329.3" y="122" width="1.4" height="424" fill="#fff7f2" opacity=".7"/>
+    <g fill="#fff7f2">
+      <rect x="280" y="471" width="38" height="2.5"/>
+      <rect x="288" y="395" width="30" height="2.5"/>
+      <rect x="296" y="317" width="22" height="2.5"/>
+      <rect x="302" y="247" width="16" height="2"/>
+      <rect x="308" y="185" width="10" height="2"/>
+    </g>
+    <g fill="#5e2b23">
+      <rect x="342" y="431" width="38" height="2.5"/>
+      <rect x="342" y="353" width="30" height="2.5"/>
+      <rect x="342" y="275" width="22" height="2.5"/>
+      <rect x="342" y="211" width="16" height="2"/>
+      <rect x="342" y="165" width="10" height="2"/>
+    </g>
+    <rect x="270" y="538" width="120" height="8" fill="#6e2f26"/>
+  </g>
+
+  <!-- Emirates Towers -->
+  <g>
+    <polygon fill="url(#deep)" points="440,466 440,214 484,166 484,466"/>
+    <polygon fill="url(#vrib)" points="440,466 440,214 484,166 484,466"/>
+    <polygon fill="#fff4ef" opacity=".25" points="440,214 484,166 484,176 440,224"/>
+    <rect x="481" y="126" width="2.5" height="42" fill="#8a4436"/>
+    <polygon fill="url(#main)" points="494,466 494,262 530,224 530,466"/>
+    <polygon fill="url(#vrib)" points="494,466 494,262 530,224 530,466"/>
+    <rect x="527" y="200" width="2" height="26" fill="#8a4436"/>
+  </g>
+
+  <!-- Museum of the Future: silver torus with an off-centre opening and calligraphy, on a green mound -->
+  <g transform="translate(0 -80) translate(606 546) scale(1.25) translate(-606 -546)">
+    <path fill="url(#mound)" d="M520,546Q540,510 600,504Q664,502 692,546Z"/>
+    <path fill="url(#mof)" fill-rule="evenodd" d="M538,474a70,52 -6 1,0 140,0a70,52 -6 1,0 -140,0Z M610,470a22,29 -12 1,0 44,0a22,29 -12 1,0 -44,0Z"/>
+    <!-- Bold Arabic-style script: long baseline sweeps, tall upright strokes, loops -->
+    <g clip-path="url(#mofBody)" fill="none" stroke="#6e2f26" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
+      <path stroke-width="4.5" d="M544,486 Q566,500 590,488 Q600,482 606,490"/>
+      <path stroke-width="4" d="M556,486 V446 M572,484 V438 M588,480 V452"/>
+      <path stroke-width="3.5" d="M560,460 q10,-10 22,-2 q8,6 18,-2"/>
+      <path stroke-width="4" d="M596,436 Q618,424 640,432 Q652,436 662,428"/>
+      <path stroke-width="3.5" d="M612,432 v-14 M630,430 v-18"/>
+      <path stroke-width="4.5" d="M606,512 Q628,520 652,508 Q666,500 674,486"/>
+      <path stroke-width="3.5" d="M566,512 q10,8 22,0 q6,-4 4,-12"/>
+      <path stroke-width="3" d="M548,466 q4,-10 12,-8"/>
+      <path stroke-width="3.5" d="M664,454 q8,8 6,22"/>
+      <path stroke-width="3" d="M578,500 q6,-10 14,-4 q6,6 0,12 q-6,4 -10,-2"/>
+      <path stroke-width="3" d="M540,476 q8,-6 14,2"/>
+      <path stroke-width="3.5" d="M600,456 v-16 M606,458 q10,6 4,16"/>
+      <path stroke-width="3" d="M618,522 q10,-8 22,-2"/>
+      <path stroke-width="3.2" d="M640,440 q6,-10 16,-6 q8,4 4,14"/>
+      <path stroke-width="2.8" d="M558,430 q12,-6 22,2"/>
+      <path stroke-width="3.5" d="M660,500 v-16 q0,-8 8,-8"/>
+      <path stroke-width="3" d="M590,524 q8,-4 16,2"/>
+    </g>
+    <g fill="#7a3a30" opacity=".8" clip-path="url(#mofBody)">
+      <circle cx="568" cy="458" r="1.8"/><circle cx="586" cy="452" r="1.6"/>
+      <circle cx="612" cy="446" r="1.8"/><circle cx="560" cy="500" r="1.6"/>
+      <circle cx="640" cy="500" r="1.8"/><circle cx="654" cy="438" r="1.6"/>
+    </g>
+    <path fill="#e9c3b5" opacity=".35" d="M610,470a22,29 -12 1,0 44,0a22,29 -12 1,0 -44,0Z"/>
+    <path fill="none" stroke="#b8705e" stroke-width="3" d="M610,470a22,29 -12 1,0 44,0a22,29 -12 1,0 -44,0Z"/>
+    <path fill="none" stroke="#fffaf7" stroke-width="2" opacity=".8" d="M552,456 q20,-28 64,-30"/>
+  </g>
+
+  <!-- Burj Al Arab: mast, sail with glass, cross-bracing and helipad -->
+  <g>
+    <path fill="url(#glass)" d="M690,466V150Q764,210 792,330Q802,400 798,466Z"/>
+    <path fill="url(#hrib)" d="M690,466V150Q764,210 792,330Q802,400 798,466Z"/>
+    <path fill="none" stroke="#fff4ef" stroke-width="7" d="M686,466V120Q770,190 800,320Q812,400 808,466"/>
+    <path fill="none" stroke="#fff4ef" stroke-width="3" d="M690,200L760,250M760,250L690,300M690,300L792,360M792,360L690,410"/>
+    <rect x="681" y="96" width="6" height="370" fill="#a65a4b"/>
+    <rect x="683" y="74" width="2" height="24" fill="#a65a4b"/>
+    <rect x="760" y="244" width="26" height="4" fill="#8a4436"/>
+    <ellipse cx="786" cy="243" rx="12" ry="3" fill="#fff4ef"/>
+  </g>
+
+  <!-- Cayan (twisted) tower -->
+  <g>
+    <polygon fill="url(#deep)" points="830,466 836,214 868,206 862,466"/>
+    <polygon fill="url(#twist)" points="830,466 836,214 868,206 862,466"/>
+    <polygon fill="#6e2f26" opacity=".2" points="850,466 852,210 868,206 862,466"/>
+  </g>
+
+  <!-- Dubai Frame: two towers and a glass bridge, geometric cladding -->
+  <g>
+    <rect x="900" y="250" width="28" height="216" fill="url(#gold)"/>
+    <rect x="1004" y="250" width="28" height="216" fill="url(#gold)"/>
+    <rect x="900" y="230" width="132" height="28" fill="url(#gold)"/>
+    <rect x="900" y="250" width="28" height="216" fill="url(#frame)"/>
+    <rect x="1004" y="250" width="28" height="216" fill="url(#frame)"/>
+    <rect x="928" y="236" width="76" height="16" fill="#f8ddd2"/>
+    <rect x="928" y="236" width="76" height="16" fill="url(#vrib)"/>
+    <g fill="#8a4436">
+      <rect x="898" y="228" width="136" height="3"/>
+      <rect x="898" y="456" width="36" height="10"/>
+      <rect x="998" y="456" width="36" height="10"/>
+    </g>
+  </g>
+
+  <!-- Jumeirah Beach Hotel (wave) -->
+  <g>
+    <path fill="url(#main)" d="M1060,466Q1110,380 1186,316L1198,466Z"/>
+    <path fill="url(#grid)" d="M1060,466Q1110,380 1186,316L1198,466Z"/>
+    <path fill="#f3cfc1" d="M1186,316Q1222,330 1230,380Q1238,430 1262,466H1198Z"/>
+    <path fill="url(#hrib)" d="M1186,316Q1222,330 1230,380Q1238,430 1262,466H1198Z"/>
+    <path fill="none" stroke="#fff4ef" stroke-width="3" d="M1186,316Q1222,330 1230,380Q1238,430 1262,466"/>
+  </g>
+
+  <!-- Princess Tower with crown and spire -->
+  <g>
+    <rect x="1290" y="210" width="44" height="256" fill="url(#deep)"/>
+    <rect x="1290" y="210" width="44" height="256" fill="url(#grid)"/>
+    <polygon fill="#c47c69" points="1288,212 1312,160 1336,212"/>
+    <polygon fill="url(#vrib)" points="1288,212 1312,160 1336,212"/>
+    <rect x="1311" y="110" width="2" height="52" fill="#8a4436"/>
+  </g>
+
+  <!-- Index Tower: central slab with side cores -->
+  <g>
+    <rect x="1360" y="250" width="48" height="216" fill="url(#main)"/>
+    <rect x="1360" y="250" width="48" height="216" fill="url(#hrib)"/>
+    <rect x="1354" y="240" width="8" height="226" fill="#8a4436"/>
+    <rect x="1406" y="240" width="8" height="226" fill="#8a4436"/>
+  </g>
+
+  <!-- Almas-style tower with angled crown -->
+  <g>
+    <polygon fill="url(#soft)" points="1450,466 1450,250 1474,226 1498,250 1498,466"/>
+    <polygon fill="url(#vrib)" points="1450,466 1450,250 1474,226 1498,250 1498,466"/>
+  </g>
+
+  <!-- Waterfront -->
+  <rect x="0" y="466" width="1600" height="8" fill="#c98370"/>
+  <rect x="0" y="474" width="1600" height="6" fill="#8c4a3f"/>
+  </g>
+  <!-- Aviation lights -->
+  <g><circle cx="330" cy="5" r="6" fill="#ff2b2b" opacity=".25"/><circle cx="330" cy="5" r="2.4" fill="#ff2b2b"/><circle cx="482" cy="287" r="6" fill="#ff2b2b" opacity=".25"/><circle cx="482" cy="287" r="2.4" fill="#ff2b2b"/><circle cx="684" cy="235" r="6" fill="#ff2b2b" opacity=".25"/><circle cx="684" cy="235" r="2.4" fill="#ff2b2b"/><circle cx="1312" cy="271" r="6" fill="#ff2b2b" opacity=".25"/><circle cx="1312" cy="271" r="2.4" fill="#ff2b2b"/></g>
+</svg>

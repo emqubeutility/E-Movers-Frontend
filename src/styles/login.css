@@ -1,0 +1,474 @@
+/* Sign-in screen: daytime Dubai skyline driving past a parked truck, white card. */
+.lg-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--ink);
+  /* Warm rose sky: near white at the top for the text, soft peach behind the skyline. */
+  background: linear-gradient(180deg, #fffaf7 0%, #fdeee7 45%, #f7d3c3 100%);
+}
+
+/* ---------- Scene
+   The truck stays in place; the world scrolls left past it. Speeds (px per second):
+   far 10, landmarks 40, roadside 90, lamps and road 200. Each layer is a repeating tile
+   moved by exactly one tile width per loop, so it never jumps. The sky stays still. */
+.lg-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+/* Each layer is one tile wider than the screen and slides by one tile with transform, which the
+   GPU composites without repainting (background-position animation repaints every frame). */
+.sc-layer {
+  position: absolute;
+  left: 0;
+  bottom: 34px;
+  width: calc(100% + var(--tile));
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: sc-scroll linear infinite;
+}
+/* Clouds drift at the landmarks' speed (40 px/s). */
+.sc-clouds {
+  --tile: 1600px;
+  top: 3%;
+  bottom: auto;
+  height: 260px;
+  background-image: url('../assets/scene/clouds.svg');
+  background-size: 1600px 260px;
+  background-position: 0 0;
+  animation-duration: 40s;
+}
+/* Buildings are toned down so the logo, heading and truck stand out (opacity costs no repaint). */
+.sc-far {
+  opacity: 0.45;
+}
+.sc-land {
+  opacity: 0.65;
+}
+.sc-side {
+  opacity: 0.95;
+}
+.sc-far {
+  --tile: 1200px;
+  height: 220px;
+  background-image: url('../assets/scene/far.svg');
+  background-size: 1200px 220px;
+  animation-duration: 120s;
+}
+.sc-land {
+  --tile: 1600px;
+  height: 640px;
+  background-image: url('../assets/scene/landmarks.svg');
+  background-size: 1600px 640px;
+  animation-duration: 40s;
+}
+.sc-side {
+  --tile: 1400px;
+  height: 200px;
+  background-image: url('../assets/scene/roadside.svg');
+  background-size: 1400px 200px;
+  animation-duration: 15.556s;
+}
+.sc-lamps {
+  --tile: 480px;
+  height: 170px;
+  background-image: url('../assets/scene/lamps.svg');
+  background-size: 480px 170px;
+  animation-duration: 2.4s;
+}
+.sc-road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34px;
+  overflow: hidden;
+  background: #161616;
+  border-top: 5px solid #2e2e2e;
+}
+.sc-road::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: calc(100% + 120px);
+  height: 3px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.85) 0 60px, transparent 60px 120px);
+  will-change: transform;
+  animation: sc-dash 0.6s linear infinite;
+}
+.sc-tr {
+  position: absolute;
+  left: max(80px, 16vw);
+  will-change: transform;
+  bottom: 14px;
+  animation: sc-bob 0.45s ease-in-out infinite alternate;
+}
+/* Wheel spokes and smoke are small HTML layers on top of the truck drawing, so they move on the
+   GPU and the truck itself never repaints.
+   Wheel radius is about 27px on screen: one turn every 0.845s rolls 169px, matching the road's 200px/s. */
+.sc-wheel {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  will-change: transform;
+  animation: sc-spin 0.845s linear infinite;
+}
+.sc-wheel svg {
+  display: block;
+}
+.sc-puff {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #c9c9cc;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: sc-sm 2.4s ease-out infinite;
+}
+@keyframes sc-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-1 * var(--tile)), 0, 0);
+  }
+}
+@keyframes sc-dash {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-120px, 0, 0);
+  }
+}
+@keyframes sc-bob {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -1.5px, 0);
+  }
+}
+@keyframes sc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes sc-sm {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(-70px, -22px) scale(1.8);
+    opacity: 0;
+  }
+}
+@keyframes lg-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes lg-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ---------- Content */
+.lg-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 56px;
+  min-height: 100vh;
+  padding: 110px 72px 60px;
+}
+.lg-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.lg-ctr {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 560px;
+  max-width: 100%;
+  /* Sits a little below the middle, closer to the skyline. */
+  padding-top: 60px;
+  text-align: center;
+}
+.lg-ctr > * {
+  animation: lg-up 0.8s both;
+}
+/* The logo sits at the top of the sign-in card. */
+.lg-card-logo {
+  display: block;
+  width: 170px;
+  height: auto;
+  margin: 0 auto 18px;
+}
+/* (No longer shown: the logo used to stand alone on the left.) */
+.lg-logo {
+  width: 380px;
+  max-width: 80%;
+  height: auto;
+}
+.lg-headline {
+  margin: 0;
+  font-size: 46px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--ink);
+  text-shadow: 0 2px 14px rgba(255, 255, 255, 0.9);
+}
+.lg-headline b {
+  color: #90191c;
+}
+.lg-lead {
+  margin: 0;
+  font-size: 17px;
+  color: var(--ink-3);
+}
+.lg-pill {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px 9px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(40, 70, 110, 0.12);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 14px;
+  animation: lg-bob 6s ease-in-out infinite !important;
+}
+.lg-pill i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f5e6e4;
+}
+.lg-pill svg.lucide {
+  width: 16px;
+  height: 16px;
+  color: #90191c;
+}
+.lg-pill-a {
+  left: -14px;
+  top: 12px;
+}
+.lg-pill-b {
+  right: -20px;
+  top: 96px;
+  animation-delay: -2.5s !important;
+}
+.lg-pill-c {
+  left: 30px;
+  bottom: 0;
+  animation-delay: -4s !important;
+}
+
+/* ---------- Card */
+.lg-card {
+  flex: none;
+  width: 420px;
+  padding: 32px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 24px 60px rgba(40, 70, 110, 0.16);
+  animation: lg-up 0.9s 0.2s both;
+}
+.lg-card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.lg-card h1,
+.lg-card .lg-sub {
+  text-align: center;
+}
+.lg-card .lg-sub {
+  margin-top: 6px;
+  font-size: 14.5px;
+  color: var(--ink-3);
+}
+.lg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+.lg-card label,
+.lg-card .field > label,
+.lg-form .field > label {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 13px;
+}
+.lg-form .input {
+  height: 46px;
+  font-size: 15px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+}
+.lg-form .input::placeholder {
+  color: #a0969a;
+}
+.lg-form .input:focus {
+  outline: none;
+  background: #fff;
+  border-color: #90191c;
+  box-shadow: 0 0 0 4px rgba(144, 25, 28, 0.12);
+}
+.lg-form .input-group > svg.lucide {
+  left: 16px;
+  width: 18px;
+  height: 18px;
+  color: var(--ink-3);
+}
+.lg-form .input-group > svg.lucide + .input {
+  padding-left: 44px;
+}
+.lg-form .input-group button {
+  color: var(--ink-3);
+}
+.lg-form input:-webkit-autofill {
+  -webkit-text-fill-color: var(--ink);
+  -webkit-box-shadow: 0 0 0 40px #fff inset;
+}
+.lg-submit {
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #901a1d, #c02a2f) !important;
+  box-shadow: 0 10px 24px rgba(144, 25, 28, 0.3);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.lg-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(192, 42, 47, 0.45);
+}
+.lg-switch {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.lg-foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.lg-foot svg.lucide {
+  width: 15px;
+  height: 15px;
+}
+
+@media (min-width: 1001px) {
+  .lg-ctr {
+    margin-right: 160px;
+  }
+}
+@media (max-width: 1000px) {
+  .lg-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 20px 60px;
+  }
+  .lg-ctr {
+    width: 100%;
+    padding-bottom: 0;
+  }
+  .lg-pill,
+  .lg-lead {
+    display: none;
+  }
+  .lg-card {
+    width: 100%;
+    max-width: 440px;
+  }
+}
+@media (max-width: 600px) {
+  .lg-headline {
+    font-size: 32px;
+  }
+  .lg-card {
+    padding: 24px 20px;
+  }
+  .sc-tr {
+    transform-origin: left bottom;
+    scale: 0.7;
+  }
+}
+/* Hidden tab: freeze the scene where it is. */
+.lg-page.is-paused .lg-scene *,
+.lg-page.is-paused .lg-scene *::after {
+  animation-play-state: paused !important;
+}
+
+/* Phones and small tablets: show the scene as a still picture to save battery and memory. */
+@media (max-width: 768px) {
+  .lg-scene *,
+  .lg-scene *::after {
+    animation: none !important;
+  }
+  .sc-layer {
+    will-change: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-page *,
+  .lg-page *::before,
+  .lg-page *::after {
+    animation: none !important;
+  }
+}
+
+/* Stacked layout: the empty left column takes no space. */
+@media (max-width: 1000px) {
+  .lg-left:empty {
+    display: none;
+  }
+}

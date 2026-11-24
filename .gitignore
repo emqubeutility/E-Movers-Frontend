@@ -1,0 +1,38 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Secrets and local settings (only the .env.example templates are committed)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Database dumps contain real data
+db-backup/
+*.sql.gz
+*.dump
+
+# Uploaded files (user data, served from the backend at runtime)
+backend/uploads/
+
+# Scratch scripts
+backend/scratch-*.mjs

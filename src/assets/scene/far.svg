@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220">
+  <g fill="#ecc3b5" opacity=".7">
+    <rect x="10" y="130" width="40" height="90"/>
+    <rect x="60" y="100" width="28" height="120"/>
+    <polygon points="110,220 110,90 124,70 138,90 138,220"/>
+    <rect x="160" y="150" width="60" height="70"/>
+    <rect x="240" y="110" width="34" height="110"/>
+    <rect x="300" y="140" width="50" height="80"/>
+    <polygon points="380,220 380,80 392,56 404,80 404,220"/>
+    <rect x="430" y="160" width="70" height="60"/>
+    <rect x="520" y="120" width="30" height="100"/>
+    <path d="M570,220V130Q570,116 588,114Q606,116 606,130V220Z"/>
+    <rect x="630" y="150" width="60" height="70"/>
+    <polygon points="710,220 710,100 740,80 740,220"/>
+    <rect x="770" y="130" width="40" height="90"/>
+    <rect x="830" y="160" width="60" height="60"/>
+    <polygon points="910,220 910,70 922,46 934,70 934,220"/>
+    <rect x="960" y="120" width="34" height="100"/>
+    <rect x="1010" y="150" width="70" height="70"/>
+    <rect x="1100" y="110" width="30" height="110"/>
+    <rect x="1150" y="140" width="44" height="80"/>
+  </g>
+</svg>
